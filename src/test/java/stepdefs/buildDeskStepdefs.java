@@ -21,17 +21,21 @@ public class buildDeskStepdefs {
 
     @And("user clicks design own desk")
     public void userClicksDesignOwnDesk() {
-        $(designOwnDesk).scrollIntoView(true).click();
+        $(designOwnDesk).scrollIntoView(true).shouldBe(Condition.visible).click();
+        sleep(1000);
         $(iframeConfig).shouldBe(Condition.visible, Duration.ofSeconds(15));
         switchTo().frame("byod-application");
         $(configurationMenu).shouldBe(Condition.visible).click();
+        sleep(1000);
     }
 
     @When("user selects dimension as {string}")
     public void userSelectsDimensionAs(String dimension) {
         $(dimensionsMenu).click();
+        sleep(1000);
         if(dimension.equalsIgnoreCase("Large")){
             $(dimensionLarge).click();
+            sleep(1000);
         }else {
             $(dimensionSmall).click();
         }
@@ -39,8 +43,10 @@ public class buildDeskStepdefs {
 
     @And("user selects unit as {string}")
     public void userSelectsUnitAs(String unıt) {
+        sleep(1000);
         $(unıtMenu).click();
         if(unıt.equalsIgnoreCase("unıts")){
+            sleep(1000);
             $(unıtUnıts).click();
         }
 

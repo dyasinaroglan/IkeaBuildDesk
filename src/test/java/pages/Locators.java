@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public interface Locators {
 
     String url = "https://www.ikea.com/us/en/planners/";
-    By designOwnDesk = By.xpath("//h2[text()='Design your own desk']");
+    By designOwnDesk = By.xpath("//span[text()='Design your own desk']");
     By iframeConfig = By.cssSelector("iframe.planner-iframe");
     By configurationMenu = By.cssSelector("div#configuration-menu");
     By dimensionsMenu = By.xpath("(//div[@class='menu-button'])[1]");
